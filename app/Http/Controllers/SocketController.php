@@ -22,12 +22,18 @@ class SocketController extends Controller implements MessageComponentInterface
     public function onOpen(ConnectionInterface $conn)
     {
         $this->clients->attach($conn);
-        echo "ALOUUU BR";
+        $conn->send("CONECTOU");
+        // echo "ALOUUU BR";
     }
 
     public function onMessage(ConnectionInterface $from, $msg)
     {
+        foreach ($this->clients as $client) {
+            // $msgs = json_encode(ChatController::getMsg('msg'));
+            $client->send($client);
+        }
     }
+
     public function onClose(ConnectionInterface $conn)
     {
         $this->clients->detach($conn);

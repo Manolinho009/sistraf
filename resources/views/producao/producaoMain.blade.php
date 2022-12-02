@@ -1,12 +1,11 @@
 @extends('layouts.sidebar')
 
-@section('title', 'Main')
+@section('title', 'Producao')
 
 
 @section('content')
 
-<div>
-    <h1>OLA MUNDO</h1>
-</div>
+
+<h1>Producao</h1>
 
 @endsection

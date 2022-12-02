@@ -1,6 +1,11 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        <meta charset="utf-8">
+       
+      {{-- EDITAR CONFORME MODELO ATUAL DO SIDEBAR --}}
+      
+      
+      
+      <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <!-- mobile metas -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,8 +14,8 @@
 
         <title>@yield('title')</title>
 
-        {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script> --}}
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
 
           <!-- bootstrap css -->
@@ -66,61 +71,21 @@
                  <div class="sidebar_blog_2">
                     <h4>General</h4>
                     <ul class="list-unstyled components">
-                       <li class="active">
-                          <a href="#" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a>
-                          <ul class="collapse list-unstyled" id="dashboard">
-                             <li>
-                                <a href="#">> <span>Default Dashboard</span></a>
-                             </li>
-                             <li>
-                                <a href="#">> <span>Dashboard style 2</span></a>
-                             </li>
-                          </ul>
-                       </li>
-                       <li><a href="#"><i class="fa fa-clock-o orange_color"></i> <span>Widgets</span></a></li>
-                       <li>
-                          <a href="#" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-diamond purple_color"></i> <span>Elements</span></a>
-                          <ul class="collapse list-unstyled" id="element">
-                             <li><a href="#">> <span>General Elements</span></a></li>
-                             <li><a href="#">> <span>Media Gallery</span></a></li>
-                             <li><a href="#">> <span>Icons</span></a></li>
-                             <li><a href="#">> <span>Invoice</span></a></li>
-                          </ul>
-                       </li>
-                       <li><a href="#"><i class="fa fa-table purple_color2"></i> <span>Tables</span></a></li>
-                       <li>
-                          <a href="#" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-object-group blue2_color"></i> <span>Apps</span></a>
-                          <ul class="collapse list-unstyled" id="apps">
-                             <li><a href="#">> <span>Email</span></a></li>
-                             <li><a href="#">> <span>Calendar</span></a></li>
-                             <li><a href="#">> <span>Media Gallery</span></a></li>
-                          </ul>
-                       </li>
-                       <li><a href="#"><i class="fa fa-briefcase blue1_color"></i> <span>Pricing Tables</span></a></li>
-                       <li>
-                          <a href="#">
-                          <i class="fa fa-paper-plane red_color"></i> <span>Contact</span></a>
-                       </li>
-                       <li class="active">
-                          <a href="#" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-clone yellow_color"></i> <span>Additional Pages</span></a>
-                          <ul class="collapse list-unstyled" id="additional_page">
-                             <li>
-                                <a href="#">> <span>Profile</span></a>
-                             </li>
-                             <li>
-                                <a href="#">> <span>Projects</span></a>
-                             </li>
-                             <li>
-                                <a href="#">> <span>Login</span></a>
-                             </li>
-                             <li>
-                                <a href="#">> <span>404 Error</span></a>
-                             </li>
-                          </ul>
-                       </li>
-                       <li><a href="#"><i class="fa fa-map purple_color2"></i> <span>Map</span></a></li>
-                       <li><a href="#"><i class="fa fa-bar-chart-o green_color"></i> <span>Charts</span></a></li>
-                       <li><a href="#"><i class="fa fa-cog yellow_color"></i> <span>Settings</span></a></li>
+
+                     {{-- LINKS DO SIDE BAR --}}
+
+                     {{-- php para verificar acesso é valido ! 
+                              usando diretivas laravel --}}
+                     
+                     {{-- @if(($codFuncao) === 'supervisor')
+                        <li><a href="producao"><i class="fa fa-clock-o orange_color"></i> <span>producao</span></a></li>
+                     @endif --}}
+
+                       <li><a href="producao"><i class="fa fa-clock-o orange_color"></i> <span>producao</span></a></li>
+                       <li><a href="web"><i class="fa fa-clock-o orange_color"></i> <span>Web</span></a></li>
+                       <li><a href="retaguarda"><i class="fa fa-clock-o orange_color"></i> <span>Retaguarda</span></a></li>
+                       <li><a href="chat"><i class="fa fa-clock-o orange_color"></i> <span>Chat</span></a></li>
+                       <li><a href="/sistraf/public"><i class="fa fa-clock-o orange_color"></i> <span>Inicio</span></a></li>
                     </ul>
                  </div>
               </nav>
@@ -168,7 +133,25 @@
         
         <script src="{{ asset('assets/js/custom') }}"></script>
         <script src="{{ asset('assets/js/chart_custom_style1') }}"></script>
-    {{-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script> --}}
-    </body>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    
+   <script>
+
+      conn = new WebSocket('ws://localhost:8086/');
+
+      conn.onopen = function(e){
+         console.log("deu BoA");
+      }
+
+      conn.onmessage = function(e){
+         console.log(e+"esta online");
+      }
+         
+   </script>
+   </body>
 </html>
+
+
